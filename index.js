@@ -6,10 +6,9 @@ var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 var moment = require('moment');
 var _ = require('underscore');
-var md5 = require('cloud/libs/md5.js');
 var Buffer = require('buffer').Buffer;
 
-var responsesController = require(__dirname + 'cloud/controllers/responses.js');
+var responsesController = require(__dirname + '/cloud/controllers/responses.js');
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -49,12 +48,10 @@ var userDescription = 'Viewer';
 // Global app configuration section
 app.set('views', 'cloud/views');  // Specify the folder to find templates
 app.set('view engine', 'ejs');    // Set the template engine
-app.use(express.bodyParser());    // Middleware for reading request body
 
 // You can use app.locals to store helper methods so that they are accessible
 // from templates.
 app.locals._ = _;
-app.locals.hex_md5 = md5.hex_md5;
 app.locals.userEmail = userEmail;
 app.locals.userDisplayName = userDisplayName;
 app.locals.userDescription = userDescription;

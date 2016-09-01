@@ -1,0 +1,25 @@
+<!-- Include the header partial -->
+<% include ../_header %>
+
+<!-- content -->
+<div class="sidebar">
+  	<div class="username"><%= userDisplayName %></div>
+  	<div class="blog_description"><%= userDescription %></div>
+</div>
+  	
+<div class="main_content">
+  	<% responses.forEach(function(response) { %>
+  		<div class="response_link">
+	  		<h1><a href="<%= '/responses/' + response.id %>">Response description: <%= response.get("description") %></a></h1>
+	  		<h5><%= formatTime(response.createdAt) %></h5>
+        <% if (typeof response.get("youtubeID") === 'undefined') { %>
+          <p>Video not uploaded</p>
+        <% } else { %>
+          <p><iframe width="360" height="360" src="//www.youtube.com/embed/<%= response.get("youtubeID") %>" frameborder="0" allowfullscreen></iframe></p>
+        <% } %>
+  		</div>
+    <% }) %>
+</div>
+
+<!-- Include the footer partial -->
+<% include ../_footer %>

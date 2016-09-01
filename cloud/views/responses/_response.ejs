@@ -1,0 +1,7 @@
+<div class='response'>
+    <h1>Description: <%= response.get('description') %></h1>
+    <h5>Created: <%= formatTime(response.createdAt) %></h5>
+    <div class='content'>
+		<iframe width="640" height="640" src="//www.youtube.com/embed/<%= response.get("youtubeID") %>" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
