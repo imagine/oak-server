@@ -9,13 +9,13 @@
   },
   "license": "MIT",
   "dependencies": {
+    "buffer": "4.9.1",
     "express": "~4.11.x",
-    "kerberos": "~0.0.x",
-    "parse": "~1.8.0",
-    "parse-server": "~2.2.12",
+    "kerberos": "0.0.24",
     "moment": "~2.14.1",
-    "underscore": "1.8.3",
-    "buffer": "4.9.1"
+    "parse": "~1.8.0",
+    "parse-server": "^4.3.0",
+    "underscore": "1.8.3"
   },
   "scripts": {
     "start": "node index.js"

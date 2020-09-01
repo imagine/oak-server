@@ -91,7 +91,7 @@ app.get('/u', function(req, res) {
 // app.get('/debug', responsesController.index);
 app.get('/debug', function(req, res) {
 	var un = 'oakadmin';
-	var pw = '#zQ87xbNsV#GBiL';
+	var pw = process.env.DEBUG_PASSWORD;
     if(un == undefined && pw == undefined) { res.end(); return; }
     if(!req.headers['authorization']){
         res.writeHead(401, {'WWW-Authenticate': 'Basic realm="Secure Area"', 'Content-Type': 'text/plain'});
