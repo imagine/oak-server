@@ -12,7 +12,7 @@ exports.index = function(req, res) {
     });
   },
   function() {
-    res.send(500, 'Failed loading responses');
+    res.status(500).send('Failed loading responses');
   });
 };
 
@@ -52,6 +52,6 @@ exports.showUser = function(req, res) {
     });
   },
   function() {
-    res.send(500, 'Failed loading responses');
+    res.status(500).send('Failed loading responses');
   });
 };
