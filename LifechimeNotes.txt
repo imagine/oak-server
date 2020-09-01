@@ -1,0 +1,7 @@
+Export database (old)
+mongodump -h ds019906.mlab.com:19906 -d heroku_frl3tx6b -u <user> -p <password> -o <output directory>
+
+See Heroku config variables for username and password.
+
+Update parse-server by bumping it in package.json. Heroku automatically downloads and installs with npm, but try locally first.
+
